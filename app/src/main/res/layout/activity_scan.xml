@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#05060a"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/common_title" />
+
+    <TextView
+        android:id="@+id/text_scan_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="扫描二维码"
+        android:textColor="#f1f1f1"
+        android:textSize="32sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_bar"
+        tools:visibility="gone" />
+
+    <!-- 二维码识别界面 -->
+    <cn.bertsir.zbar.CameraPreview
+        android:id="@+id/cp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="#11ffffff" />
+
+
+    <!--        tools:background="#9900ff00"
+-->
+    <cn.bertsir.zbar.view.ScanView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="#ff00ff00" />
+
+    <TextView
+        android:id="@+id/tv_tips_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        android:layout_marginTop="9.33dp"
+        android:text="请扫描66 APP更新的余额二维码"
+        android:textColor="#f1f1f1"
+        android:textSize="14.67sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_scan_code"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_mark_question"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="13dp"
+        android:src="@drawable/mark_question"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/title_bar"
+        app:layout_constraintRight_toRightOf="@+id/title_bar"
+        app:layout_constraintTop_toTopOf="@+id/title_bar"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_tips_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:lineSpacingMultiplier="1.3"
+        android:text="请扫描66钱包 APP获取的二维码"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_scan_code"
+        tools:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/rl_tips_help_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_gradient"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_balance_tips1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="9.33dp"
+            android:text="第一次更新余额请点击"
+            android:textColor="#ffffff"
+            android:textSize="13.33sp" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="19dp"
+            app:contentPaddingBottom="9.33dp"
+            app:contentPaddingLeft="15.33dp"
+            app:contentPaddingRight="15.33dp"
+            app:contentPaddingTop="9.33dp">
+
+            <TextView
+                android:id="@+id/tv_balance_tips2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:text="显示余额二维码"
+                android:textColor="#59BD1E"
+                android:textSize="14.67sp" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
